@@ -74,6 +74,26 @@ body {
   animation: moveInRight 1.2s ease-out;
 }
 
+.heading-secondary {
+  font-size: 3.5rem;
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  display: inline-block;
+  /*Trick: tạo background dạng linear-gradient sau đó cắt background theo text, lúc này màu của text sẽ nằm đè lên phần chưa cắt
+      do đó ta dùng color: transparent để trong suốt màu đang ghi đè lên -> có màu gradient chưa cắt
+  */
+  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  transition: all 0.2s;
+}
+.heading-secondary:hover {
+  transform: skew(10deg, -5deg) scale(1.1);
+  text-shadow: 0.5rem 1rem 1rem rgba(0, 0, 0, 0.2);
+}
+
 .heading-tertiary {
   font-size: 1.6rem;
   font-weight: 700;
@@ -448,26 +468,6 @@ body {
   position: relative;
 }
 
-.heading-secondary {
-  font-size: 3.5rem;
-  font-weight: 700;
-  letter-spacing: 0.2rem;
-  text-transform: uppercase;
-  display: inline-block;
-  /*Trick: tạo background dạng linear-gradient sau đó cắt background theo text, lúc này màu của text sẽ nằm đè lên phần chưa cắt
-      do đó ta dùng color: transparent để trong suốt màu đang ghi đè lên -> có màu gradient chưa cắt
-  */
-  background-image: linear-gradient(to right, #7ed56f, #28b485);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  transition: all 0.2s;
-}
-.heading-secondary:hover {
-  transform: skew(10deg, -5deg) scale(1.1);
-  text-shadow: 0.5rem 1rem 1rem rgba(0, 0, 0, 0.2);
-}
-
 .header {
   height: 95vh;
   position: relative;
@@ -483,6 +483,11 @@ body {
 }
 .header__logo-box .logo {
   height: 3.5rem;
+}
+.header__logo-box .logo:hover {
+  transition: all 0.2s;
+  transform: translateY(-2px) scale(1.05);
+  cursor: pointer;
 }
 .header__text-box {
   position: absolute;
