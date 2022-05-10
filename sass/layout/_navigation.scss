@@ -85,16 +85,16 @@
     }
     &__list {
         list-style: none;
-        position: absolute;
         @include center;
         text-align: center;
+        width: 100%;
     }
     &__item {
         margin: 1.3rem;
     }
     &__link {
         &:link,&:visited{
-            display: block;
+            display: inline-block;
             font-size: 3rem;
             font-weight: 300;
             padding: 1rem 2rem;
