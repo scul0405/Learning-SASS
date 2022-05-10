@@ -9,8 +9,28 @@
 html {
     font-size: 62.5%;
     /* 62.5%*16 = 10 -> font-size 10px, để theo % để khi người dùng resize thì pixel tự động resize theo*/
+
+    @include respond(tab-land) { //1rem = 9px
+        font-size: 56.25%;
+    }
+
+    // phone and tab-port using same 1rem = 8 px
+    // Để sau để respond sau ghi sau thì được apply đè lên cái ghi trước
+    @include respond(tab-port) { //1rem = 8 px -> 8/16 = 50% 
+        font-size: 50%;
+    }
+
+    @include respond(big-desktop) { //1rem = 12px
+        font-size: 75%;
+    }
 }
 
 body {
     box-sizing: border-box;
+    padding: 3rem;
+
+    @include respond(tab-port) { 
+        padding: 1rem;
+    }
+
 }
