@@ -14,6 +14,11 @@
     &__navigation {
         border-top: 1px solid $color-grey-dark;
         display: inline-block;
+
+        @include respond(tab-land) {
+            padding-left: 1rem;
+        }
+
         @include respond(tab-port) {
             width: 100%;
             text-align: center;
@@ -56,6 +61,10 @@
         text-align: justify;
         width: 80%;
         float: right;
+
+        @include respond(tab-land) {
+            padding-right: 1rem;
+        }
 
         @include respond(tab-port) {
             width: 100%;

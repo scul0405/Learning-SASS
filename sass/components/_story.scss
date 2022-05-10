@@ -9,6 +9,11 @@
     font-size: $default-font-size;
     transform: skewX(-12deg);
 
+    @include respond(tab-port) {
+        width: 100%;
+        transform: skewX(0);
+    }
+
     &__shape {
         width: 15rem;
         height: 15rem;
@@ -19,6 +24,12 @@
         -webkit-clip-path: circle(50% at 50% 50%);
         clip-path: circle(50% at 50% 50%);
         transform: translateX(-3rem) skewX(12deg);
+        @include respond(tab-port) {
+            float: none;
+            transform: translateX(0) skewX(0);
+            margin: 0 auto;
+            margin-bottom: 5rem;
+        }
         position: relative;
     }
 
@@ -31,6 +42,11 @@
 
     &__text {
         transform: skewX(12deg);
+
+        @include respond(tab-port) {
+            transform: skewX(0);
+            
+        }
 
     }
 

@@ -23,10 +23,11 @@
         }
 
         &--p2 {
-            left: -1rem;
+            right: 0;
             top: 2rem;
             @include respond(tab-port) {
-             top: -1rem;   
+             top: -1rem;
+             left: -1rem;   
             }
         }
 

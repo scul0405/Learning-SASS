@@ -1,5 +1,6 @@
 .booking {
     height: 50rem;
+    position: relative;
     background-size: 100%;
 
     border-radius: 3px;
@@ -7,10 +8,26 @@
 
     background-image: linear-gradient(105deg, rgba($color-white, .9) 0%, rgba($color-white, .9) 50%, transparent 50%), url(../img/nat-10.jpg);
 
+    @include respond(tab-land) {
+        background-image: linear-gradient(105deg, rgba($color-white, .9) 0%, rgba($color-white, .9) 60%, transparent 60%), url(../img/nat-10.jpg);
+        background-size: cover;
+    }
+
+    @include respond(tab-port) {
+        background-image: linear-gradient(105deg, rgba($color-white, .9) 0%, rgba($color-white, .9) 100%, transparent 100%), url(../img/nat-10.jpg);
+        background-size: cover;
+    }
+
     &__form {
         width: 50%;
 
         padding: 6rem;
+        
+        @include respond(tab-land) {
+            width: 60%;
+            padding: 5rem;
+        }
+
 
         &__group:not(:last-child){
             margin-bottom: 2rem;
@@ -44,7 +61,7 @@
             }
 
         }
-
+        
         &__label {
             font-size: 1.2rem;
             font-weight: 700;
@@ -53,26 +70,30 @@
             display: block;
             transition: all .3s;
         }
-
+        
         &__input:placeholder-shown + &__label {
             opacity: 0;
             visibility: hidden;
             transform: translateY(-4rem);
         }
-
+        
         &__radio {
             &-group {
                 width: 49%;
                 display: inline-block;
+                @include respond(tab-port) {
+                    display: block;
+                    margin: 2rem 0;
+                }
             }
-
+            
             &-label {
                 font-size: $default-font-size;
                 cursor: pointer;
                 position: relative;
                 padding-left: 4.5rem;
             }
-
+            
             &-button {
                 height: 3rem;
                 width: 3rem;
@@ -102,6 +123,21 @@
             }
             &-input {
                 display: none;
+            }
+        }
+        @include respond(tab-port) {
+            width: 100%;
+            padding: 4rem;
+            .btn {
+                position: absolute;
+                bottom: 2rem;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            &__group:last-child {
+                display: block;
+                height: 2rem;
             }
         }
     }    

@@ -50,6 +50,11 @@ body {
   box-sizing: border-box;
   padding: 3rem;
 }
+@media (max-width: 75em) {
+  body {
+    padding: 2rem;
+  }
+}
 @media (max-width: 56.25em) {
   body {
     padding: 1rem;
@@ -289,12 +294,13 @@ body {
   }
 }
 .composition__photo--p2 {
-  left: -1rem;
+  right: 0;
   top: 2rem;
 }
 @media (max-width: 56.25em) {
   .composition__photo--p2 {
     top: -1rem;
+    left: -1rem;
   }
 }
 .composition__photo--p3 {
@@ -510,6 +516,12 @@ body {
   font-size: 1.6rem;
   transform: skewX(-12deg);
 }
+@media (max-width: 56.25em) {
+  .story {
+    width: 100%;
+    transform: skewX(0);
+  }
+}
 .story__shape {
   width: 15rem;
   height: 15rem;
@@ -522,6 +534,14 @@ body {
   transform: translateX(-3rem) skewX(12deg);
   position: relative;
 }
+@media (max-width: 56.25em) {
+  .story__shape {
+    float: none;
+    transform: translateX(0) skewX(0);
+    margin: 0 auto;
+    margin-bottom: 5rem;
+  }
+}
 .story__img {
   height: 100%;
   transition: all 0.5s;
@@ -530,6 +550,11 @@ body {
 }
 .story__text {
   transform: skewX(12deg);
+}
+@media (max-width: 56.25em) {
+  .story__text {
+    transform: skewX(0);
+  }
 }
 .story__caption {
   position: absolute;
@@ -571,14 +596,33 @@ body {
 
 .booking {
   height: 50rem;
+  position: relative;
   background-size: 100%;
   border-radius: 3px;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2);
   background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url(../img/nat-10.jpg);
 }
+@media (max-width: 75em) {
+  .booking {
+    background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 60%, transparent 60%), url(../img/nat-10.jpg);
+    background-size: cover;
+  }
+}
+@media (max-width: 56.25em) {
+  .booking {
+    background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%, transparent 100%), url(../img/nat-10.jpg);
+    background-size: cover;
+  }
+}
 .booking__form {
   width: 50%;
   padding: 6rem;
+}
+@media (max-width: 75em) {
+  .booking__form {
+    width: 60%;
+    padding: 5rem;
+  }
 }
 .booking__form__group:not(:last-child) {
   margin-bottom: 2rem;
@@ -623,6 +667,12 @@ body {
   width: 49%;
   display: inline-block;
 }
+@media (max-width: 56.25em) {
+  .booking__form__radio-group {
+    display: block;
+    margin: 2rem 0;
+  }
+}
 .booking__form__radio-label {
   font-size: 1.6rem;
   cursor: pointer;
@@ -658,6 +708,22 @@ body {
 }
 .booking__form__radio-input {
   display: none;
+}
+@media (max-width: 56.25em) {
+  .booking__form {
+    width: 100%;
+    padding: 4rem;
+  }
+  .booking__form .btn {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .booking__form__group:last-child {
+    display: block;
+    height: 2rem;
+  }
 }
 
 .popup {
@@ -839,10 +905,20 @@ body {
   padding: 15rem 0;
   position: relative;
 }
+@media (max-width: 56.25em) {
+  .section-stories {
+    padding: 10rem 0;
+  }
+}
 
 .section-book {
   padding: 15rem 0;
   background-image: linear-gradient(to right bottom, #7ed56f, #28b485);
+}
+@media (max-width: 56.25em) {
+  .section-book {
+    padding: 10rem 0;
+  }
 }
 
 .header {
@@ -898,6 +974,11 @@ body {
   border-top: 1px solid #999;
   display: inline-block;
 }
+@media (max-width: 75em) {
+  .footer__navigation {
+    padding-left: 1rem;
+  }
+}
 @media (max-width: 56.25em) {
   .footer__navigation {
     width: 100%;
@@ -935,6 +1016,11 @@ body {
   text-align: justify;
   width: 80%;
   float: right;
+}
+@media (max-width: 75em) {
+  .footer__copyright {
+    padding-right: 1rem;
+  }
 }
 @media (max-width: 56.25em) {
   .footer__copyright {
